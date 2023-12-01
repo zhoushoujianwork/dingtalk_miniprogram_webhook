@@ -1,0 +1,12 @@
+services:
+ server:
+    image: 'miniprogram:latest'
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+      # DEBUG: "true" # 关闭请注释掉
+      token: "YOUR_TOKEN_HERE"
+      encodingAESKey: "YOUR_ENCODING_AES_KEY_HERE"
+      suiteKey: "YOUR_SUITE_KEY_HERE"
+    volumes:
+      - '/mnt/logs/miniprogram:/opt/logs/apps'

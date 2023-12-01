@@ -1,0 +1,58 @@
+definitions:
+  model.WebHookRequest:
+    properties:
+      encrypt:
+        description: encrypt
+        type: string
+    type: object
+host: api.pop.patsnap.info
+info:
+  contact:
+    name: DevOps Team
+  description: Patsnap OPS API spec.
+  termsOfService: http://swagger.io/terms/
+  title: mini program webhook API
+  version: 2023-03
+paths:
+  /v2023-03/webhook/callback:
+    post:
+      consumes:
+      - application/json
+      description: webhook callback
+      parameters:
+      - description: signature
+        in: query
+        name: signature
+        required: true
+        type: string
+      - description: timestamp
+        in: query
+        name: timestamp
+        required: true
+        type: string
+      - description: nonce
+        in: query
+        name: nonce
+        required: true
+        type: string
+      - description: input
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/model.WebHookRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: webhook callback
+      tags:
+      - webhook
+swagger: "2.0"

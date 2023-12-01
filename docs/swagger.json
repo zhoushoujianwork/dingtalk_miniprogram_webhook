@@ -1,0 +1,87 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Patsnap OPS API spec.",
+        "title": "mini program webhook API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "DevOps Team"
+        },
+        "version": "2023-03"
+    },
+    "host": "api.pop.patsnap.info",
+    "paths": {
+        "/v2023-03/webhook/callback": {
+            "post": {
+                "description": "webhook callback",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "webhook"
+                ],
+                "summary": "webhook callback",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "signature",
+                        "name": "signature",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "timestamp",
+                        "name": "timestamp",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "nonce",
+                        "name": "nonce",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "description": "input",
+                        "name": "input",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.WebHookRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.WebHookRequest": {
+            "type": "object",
+            "properties": {
+                "encrypt": {
+                    "description": "encrypt",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
