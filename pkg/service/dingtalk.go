@@ -5,7 +5,7 @@ import (
 	"miniprogram/pkg/model"
 	"strings"
 
-	"github.com/patsnapops/noop/log"
+	"github.com/xops-infra/noop/log"
 )
 
 type WebhookService struct {

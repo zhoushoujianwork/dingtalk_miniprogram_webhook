@@ -5,7 +5,7 @@ import (
 	"miniprogram/app"
 	"miniprogram/pkg/api"
 
-	"github.com/patsnapops/noop/log"
+	"github.com/xops-infra/noop/log"
 )
 
 var (

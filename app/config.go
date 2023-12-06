@@ -1,12 +1,13 @@
 package app
 
 import (
-	"miniprogram/pkg/model"
 	"os"
 
 	"github.com/alibabacloud-go/tea/tea"
-	"github.com/patsnapops/noop/log"
 	"github.com/spf13/viper"
+	"github.com/xops-infra/noop/log"
+
+	"miniprogram/pkg/model"
 )
 
 type Config struct {

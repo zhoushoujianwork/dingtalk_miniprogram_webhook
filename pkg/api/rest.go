@@ -7,11 +7,11 @@ import (
 	_ "miniprogram/docs"
 
 	"github.com/gin-gonic/gin"
-	"github.com/patsnapops/ginx/middleware"
-	hh "github.com/patsnapops/http-headers"
-	"github.com/patsnapops/noop/log"
 	swaggerfiles "github.com/swaggo/files"
 	ginswagger "github.com/swaggo/gin-swagger"
+	"github.com/xops-infra/ginx/middleware"
+	hh "github.com/xops-infra/http-headers"
+	"github.com/xops-infra/noop/log"
 )
 
 func InitGin(debug bool) *gin.Engine {

@@ -7,7 +7,7 @@ import (
 
 	"github.com/alibabacloud-go/tea/tea"
 	go_dingtalk "github.com/icepy/go-dingtalk/src"
-	"github.com/patsnapops/noop/log"
+	"github.com/xops-infra/noop/log"
 )
 
 type webhookClient struct {
