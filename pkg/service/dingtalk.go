@@ -2,10 +2,11 @@ package service
 
 import (
 	"fmt"
-	"miniprogram/pkg/model"
 	"strings"
 
 	"github.com/xops-infra/noop/log"
+
+	"miniprogram/pkg/model"
 )
 
 type WebhookService struct {
@@ -51,7 +52,7 @@ func (w *WebhookService) CallBack(signature, timestamp, nonce string, input mode
 			// 执行操作
 			err = w.Io.Execute(req, condition.Actions)
 			if err != nil {
-				log.Errorf("execute actions failed: %+v", condition.Actions)
+				log.Errorf("execute actions failed: %+v error: %s", condition.Actions, err)
 			}
 			log.Infof("execute actions success: %+v", condition.Actions)
 		}
